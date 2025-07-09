@@ -48,6 +48,7 @@ const Hero = () => {
           <video
             key={currentIndex}
             src={getVideoSrc(currentIndex)}
+            loop
             autoPlay
             muted
             preload="auto"
