@@ -26,7 +26,6 @@ export const useHeroVideo = () => {
     setCurrentIndex(upcomingVideoIndex);
   };
 
-  // El hook retorna todo lo que el componente necesita
   return {
     currentIndex,
     upcomingVideoIndex,
