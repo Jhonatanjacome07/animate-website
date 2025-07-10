@@ -1,6 +1,6 @@
 import { TiLocation, TiLocationArrow } from "react-icons/ti";
 import { useHeroVideo } from "../hooks/useHeroVideo";
-import Button from "./button";
+import Button from "./Button";
 
 const Hero = () => {
   const {
