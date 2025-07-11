@@ -1,38 +1,47 @@
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-
 import { ScrollTrigger } from "gsap/all";
+
+import AnimatedTitle from "./AnimatedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function About() {
+const About = () => {
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
         start: "center center",
-        end: "+=700 center",
+        end: "+=800 center",
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
       },
     });
+
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
       height: "100vh",
       borderRadius: 0,
     });
-  }, []);
+  });
+
   return (
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <div className="mt-5 text-center text-4xl uppercase  md:text-[6rem]">
-          <p> Bienvenido a Safe Mobility</p>
-        </div>
+        <p className="font-general text-sm uppercase md:text-[30px]">
+          Bienvenido a Safe Mobility
+        </p>
+        <AnimatedTitle
+          title="Movilidad inteligente<br />sin emisiones, sin límites"
+          containerClass="mt-5 !text-black text-center "
+        />
+
         <div className="about-subtext">
-          <p>Movilidad eléctrica. Sin emisiones. Sin límites.</p>
+          <p>El futuro de la movilidad ya comenzó.</p>
           <p className="text-gray-500">
-            Safe Mobility conecta tecnología, sostenibilidad y personas.
+            Safe Mobility impulsa una nueva era de transporte limpio e
+            inteligente.
           </p>
         </div>
       </div>
@@ -48,6 +57,6 @@ function About() {
       </div>
     </div>
   );
-}
+};
 
 export default About;
